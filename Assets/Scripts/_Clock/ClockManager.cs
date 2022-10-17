@@ -13,6 +13,11 @@ namespace JazzApps
 
 		private void LateUpdate ()
 		{
+			RefreshClockDisplay();
+		}
+
+		private void RefreshClockDisplay()
+		{
 			var time = DateTime.Now.TimeOfDay;
 			hoursPivot.localRotation = Quaternion.Euler(0f, hoursToDegrees * (float)time.TotalHours, 0f);
 			minutesPivot.localRotation = Quaternion.Euler(0f, minutesToDegrees * (float)time.TotalMinutes, 0f);
